@@ -10,15 +10,17 @@ RUTAS
 
 
 
-** Para el ejercicio, obtener el cuestionario del servidor
-la ruta seria **
+**Para el ejercicio, obtener el cuestionario del servidor
+la ruta seria**
+
 GET: /api/preguntas/cuestionario/1
 
+```javascript
 {
 
     "id_cuestionario": 1,
     "titulo_cuestionario": "Seguridad Ciudadana",
-    "desc_cuestionario": "Se tiene como base la muestra de 384 encuestas a ser realizadas en la ciudad de El Alto, para lo cual se vieron factibles varias opciones para llevar a cabo la implementación de la prueba piloto ",
+    "desc_cuestionario": "Se tiene como base la muestra de 384 encuestas a ser realizadas en la ciudad de El Alto, para lo cual se vieron factibles varias opciones para llevar a cabo la implementaciÃ³n de la prueba piloto ",
     "preguntas": [
         {
             "id_pregunta": 1,
@@ -31,11 +33,11 @@ GET: /api/preguntas/cuestionario/1
         },
         {
             "id_pregunta": 2,
-            "pregunta": "Considera que vivir en esta zona es…",
+            "pregunta": "Considera que vivir en esta zona esâ€¦",
             "tipo": "SINGLE",
             "orden": 2,
             "n": 2,
-            "q": "Considera que vivir en esta zona es…",
+            "q": "Considera que vivir en esta zona esâ€¦",
             "opciones": [
                 {
                     "id_opcion": 1,
@@ -62,32 +64,32 @@ GET: /api/preguntas/cuestionario/1
         },
         {
             "id_pregunta": 3,
-            "pregunta": "En su opinión ¿Cuáles son las principales deficiencias en su zona en cuanto a seguridad?",
+            "pregunta": "En su opiniÃ³n Â¿CuÃ¡les son las principales deficiencias en su zona en cuanto a seguridad?",
             "tipo": "MULTIPLE",
             "orden": 3,
             "n": 3,
-            "q": "En su opinión ¿Cuáles son las principales deficiencias en su zona en cuanto a seguridad?",
+            "q": "En su opiniÃ³n Â¿CuÃ¡les son las principales deficiencias en su zona en cuanto a seguridad?",
             "opciones": [
                 {
                     "id_opcion": 4,
-                    "opcion": "Ausencia o control policial mínimo",
+                    "opcion": "Ausencia o control policial mÃ­nimo",
                     "accion": null,
                     "referencia": null,
-                    "l": "Ausencia o control policial mínimo"
+                    "l": "Ausencia o control policial mÃ­nimo"
                 },
                 {
                     "id_opcion": 5,
-                    "opcion": "Presencia de bares y licorerías en la zona",
+                    "opcion": "Presencia de bares y licorerÃ­as en la zona",
                     "accion": null,
                     "referencia": null,
-                    "l": "Presencia de bares y licorerías en la zona"
+                    "l": "Presencia de bares y licorerÃ­as en la zona"
                 },
                 {
                     "id_opcion": 6,
-                    "opcion": "Falta de alumbrado público",
+                    "opcion": "Falta de alumbrado pÃºblico",
                     "accion": null,
                     "referencia": null,
-                    "l": "Falta de alumbrado público"
+                    "l": "Falta de alumbrado pÃºblico"
                 },
                 {
                     "id_opcion": 7,
@@ -104,11 +106,11 @@ GET: /api/preguntas/cuestionario/1
 	.....*/
         {
             "id_pregunta": 5,
-            "pregunta": "¿Realizó la denuncia del hecho?",
+            "pregunta": "Â¿RealizÃ³ la denuncia del hecho?",
             "tipo": "SINGLE",
             "orden": 5,
             "n": 5,
-            "q": "¿Realizó la denuncia del hecho?",
+            "q": "Â¿RealizÃ³ la denuncia del hecho?",
             "opciones": [
                 {
                     "id_opcion": 19,
@@ -134,23 +136,29 @@ GET: /api/preguntas/cuestionario/1
     ]
 
 }
+```
 
 
+**Para el envio de las respuestas hacia la base de datos:**
 
-** Para el envio de las respuestas hacia la base de datos: **
 
 POST: /api/respuesta
 
+```javascript
 {
+
 "id_pregunta":2,
 "id_usuario":999,
 "id_opciones":[4,5,6],
 "respuesta_abierta": "respuesta descrptiva u opcion otro"
-}
 
+}
+```
 
 retorna json
+```javascript
 {"mensaje":"ok","id":7}
+```
 
 
 
