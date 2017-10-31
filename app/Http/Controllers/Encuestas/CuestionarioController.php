@@ -35,13 +35,14 @@ class CuestionarioController extends Controller
     }
 
     public function guardarRespuesta(Request $req)
-    {
-        // return $req;
+    {   
+        $opciones ='|' .  implode("||",$req->id_opciones) . '|';
+        // return $opciones;
         $id = \DB::table('respuestas')->insertGetId([
             'id_pregunta'=>$req->id_pregunta,
             'id_usuario'=>$req->id_usuario,
             'delete'=>false,
-            'id_opcion'=>$req->id_opcion,
+            'id_opciones'=>$opciones,
             'respuesta_abierta'=>$req->respuesta_abierta,
 
         ]);

@@ -1,53 +1,158 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+ENCUESTAS
+=========
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+RUTAS
+-----
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+* GET: /api/preguntas/cuestionario/{id}
+* POST: /api/respuesta
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-## Learning Laravel
+** Para el ejercicio, obtener el cuestionario del servidor
+la ruta seria **
+GET: /api/preguntas/cuestionario/1
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+{
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+    "id_cuestionario": 1,
+    "titulo_cuestionario": "Seguridad Ciudadana",
+    "desc_cuestionario": "Se tiene como base la muestra de 384 encuestas a ser realizadas en la ciudad de El Alto, para lo cual se vieron factibles varias opciones para llevar a cabo la implementación de la prueba piloto ",
+    "preguntas": [
+        {
+            "id_pregunta": 1,
+            "pregunta": "Zona en la que vive?",
+            "tipo": "OPEN",
+            "orden": 1,
+            "n": 1,
+            "q": "Zona en la que vive?",
+            "opciones": [ ]
+        },
+        {
+            "id_pregunta": 2,
+            "pregunta": "Considera que vivir en esta zona es…",
+            "tipo": "SINGLE",
+            "orden": 2,
+            "n": 2,
+            "q": "Considera que vivir en esta zona es…",
+            "opciones": [
+                {
+                    "id_opcion": 1,
+                    "opcion": "Seguro",
+                    "accion": null,
+                    "referencia": null,
+                    "l": "Seguro"
+                },
+                {
+                    "id_opcion": 2,
+                    "opcion": "Inseguro",
+                    "accion": null,
+                    "referencia": null,
+                    "l": "Inseguro"
+                },
+                {
+                    "id_opcion": 3,
+                    "opcion": "No sabe/ No contesta",
+                    "accion": null,
+                    "referencia": null,
+                    "l": "No sabe/ No contesta"
+                }
+            ]
+        },
+        {
+            "id_pregunta": 3,
+            "pregunta": "En su opinión ¿Cuáles son las principales deficiencias en su zona en cuanto a seguridad?",
+            "tipo": "MULTIPLE",
+            "orden": 3,
+            "n": 3,
+            "q": "En su opinión ¿Cuáles son las principales deficiencias en su zona en cuanto a seguridad?",
+            "opciones": [
+                {
+                    "id_opcion": 4,
+                    "opcion": "Ausencia o control policial mínimo",
+                    "accion": null,
+                    "referencia": null,
+                    "l": "Ausencia o control policial mínimo"
+                },
+                {
+                    "id_opcion": 5,
+                    "opcion": "Presencia de bares y licorerías en la zona",
+                    "accion": null,
+                    "referencia": null,
+                    "l": "Presencia de bares y licorerías en la zona"
+                },
+                {
+                    "id_opcion": 6,
+                    "opcion": "Falta de alumbrado público",
+                    "accion": null,
+                    "referencia": null,
+                    "l": "Falta de alumbrado público"
+                },
+                {
+                    "id_opcion": 7,
+                    "opcion": "Otro (especifique).",
+                    "accion": "Especifique",
+                    "referencia": 0,
+                    "l": "Otro (especifique).",
+                    "o": true
+                }
+            ]
+        },
+        /*....
+	.. etc ...
+	.....*/
+        {
+            "id_pregunta": 5,
+            "pregunta": "¿Realizó la denuncia del hecho?",
+            "tipo": "SINGLE",
+            "orden": 5,
+            "n": 5,
+            "q": "¿Realizó la denuncia del hecho?",
+            "opciones": [
+                {
+                    "id_opcion": 19,
+                    "opcion": "Si (pasa a la 6)",
+                    "accion": null,
+                    "referencia": null,
+                    "l": "Si (pasa a la 6)"
+                },
+                {
+                    "id_opcion": 20,
+                    "opcion": "No (pasa a la 7)",
+                    "accion": "saltar",
+                    "referencia": 7,
+                    "l": "No (pasa a la 7)",
+                    "j": 7
+                }
+            ]
+        },
+	/* ..............
+	........etc ........
+	...........*/
+        
+    ]
 
-## Laravel Sponsors
+}
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
 
-## Contributing
+** Para el envio de las respuestas hacia la base de datos: **
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+POST: /api/respuesta
 
-## Security Vulnerabilities
+{
+"id_pregunta":2,
+"id_usuario":999,
+"id_opciones":[4,5,6],
+"respuesta_abierta": "respuesta descrptiva u opcion otro"
+}
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-## License
+retorna json
+{"mensaje":"ok","id":7}
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+
+
+
